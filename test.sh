@@ -7,7 +7,7 @@ touch README.md
 echo '## example/example.c'>README.md
 echo '判断是奇数还是偶数'>>README.md
 echo '## practice/practice.c'>>README.md
-echo '比较两个数的大小'
+echo '比较两个数的大小'>>README.md
 git add example
 git commit -m"基础课sh exa"
 git add practice
