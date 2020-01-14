@@ -4,7 +4,7 @@
 *显示菜单的选项，使用数组，同时使用数组的长度来判断用户的输出是否合法
 *用户输入的数字不能大于数组的长达
 */
-char *ROOT_MENU[] = {"要进行哪种运算？\n","1.退出\n","2.减法\n","3.乘法\n","4.除法\n","5.退出\n",}
+char *ROOT_MENU[] = {"要进行哪种运算？\n","1.退出\n","2.减法\n","3.乘法\n","4.除法\n","5.退出\n",};
 
 int ROOT_MENU_LEN = sizeof(ROOT_MENU) / sizeof(char *);
 
@@ -26,7 +26,7 @@ void calucuLate(enum CalculateType calType, int calNumOne, int calNumTwo);
 
 enum CalculateType getCalType(int userInput);
 
-int int main(){
+ int main(){
 	//记录第一个操作数
 	int calNumOne = 0;
 	//记录第二个操作数
@@ -40,7 +40,7 @@ int int main(){
 
 	while (flowStatus != QUIT) {
 		switch (flowStatus) {
-			case ROOT;
+			case ROOT:
 			displayRootMenu();
 			userInput = scanInt();
 			//用户输入不合法
@@ -54,18 +54,18 @@ int int main(){
 				flowStatus = OPT_ONE_INPUT;
 			}
 			break;
-		case OPT_ONE_INPUT;
+		case OPT_ONE_INPUT:
 			printf("请输入第一个操作数\n");
 			calNumOne = scanInt();
 			flowStatus = OPT_TWO_INPUT;
 			break;
-		case OPT_TWO_INPUT;
+		case OPT_TWO_INPUT:
 		printf("请输入第二个操作数\n");
 		calNumTwo = scanInt();
 		calucuLate(calType, calNumOne, calNumTwo);
 		flowStatus = ROOT;
 		break;
-	case QUIT;
+	case QUIT:
 		return 0;
 		}
 	}
@@ -104,7 +104,7 @@ void calucuLate(enum CalculateType calType, int calNumOne, int calNumTwo){
 			printf("%d * %d = %d\n", calNumOne, calNumTwo, calNumOne * calNumTwo );
 			break;
 		case DIV:
-			printf("%d / %d = %d\n", calNumOne, calNumTwo, (calNumOne * 1.0) / calNumTwo);
+			printf("%d / %d = %.2f\n", calNumOne, calNumTwo, (calNumOne * 1.0) / calNumTwo);
 			break;
 		default:
 			break;
